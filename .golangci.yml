@@ -17,46 +17,18 @@ linters:
   # We intentionally use a limited set of linters.
   # See the comment on top of this file.
   enable:
-    - bodyclose
-    - copyloopvar
-    - depguard
-    - dogsled
-    - dupl
-    - errcheck
-    - errorlint
-    - funlen
-    - gocheckcompilerdirectives
-    - gochecknoinits
-    - gochecknoinits
-    - goconst
-    - gocritic
-    - gocyclo
-    - godox
-    - gofmt
-    - goimports
-    - mnd
-    - goprintffuncname
-    - gosec
-    - gosimple
-    - govet
-    - intrange
-    - ineffassign
-    - lll
-    - misspell
-    - nakedret
-    - noctx
-    - nolintlint
-    - revive
-    - staticcheck
-    - stylecheck
-    - testifylint
-    - unconvert
-    - unparam
-    - unused
-    - whitespace
+    - exhaustive
 
 
 linters-settings:
+  exhaustive:
+    # check switch statements in generated files also
+    check-generated: false
+    # indicates that switch statements are to be considered exhaustive if a
+    # 'default' case is present, even if all enum members aren't listed in the
+    # switch
+    default-signifies-exhaustive: true
+
   depguard:
     rules:
       logger:
